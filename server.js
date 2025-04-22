@@ -19,7 +19,7 @@ connectDB();
 
 // Function to fetch data from Twitter with rate limit handling
 const fetchDataFromTwitter = () => {
-  const tweetIds = '1602297284962197504,1437728605951420421'; // Example Tweet IDs
+  const tweetIds = '1914448751667609913,1914457276749918540'; // Example Tweet IDs
 
   axios.get('https://api.twitter.com/2/tweets', {
     params: {
