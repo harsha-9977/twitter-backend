@@ -24,18 +24,24 @@ app.use('/api/twitter', twitterRoutes);
 // Scheduler
 require('./utils/scheduler');
 
-
 const axios = require('axios');
 
+// Replace with actual public tweet IDs (these are just for testing)
+const tweetIds = '1602297284962197504,1437728605951420421'; // Elon Musk, NASA
+
 axios.get('https://api.twitter.com/2/tweets', {
+    params: {
+        ids: tweetIds
+    },
     headers: {
         'Authorization': `Bearer ${process.env.TWITTER_BEARER_TOKEN}`
     }
 })
 .then(response => {
-    console.log(response.data);
+    console.log('Tweet data:', response.data);
 })
 .catch(error => {
     console.error('Error fetching data:', error.response ? error.response.data : error.message);
 });
+
 
