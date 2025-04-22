@@ -5,7 +5,11 @@ const connectDB = require('./config/db');
 const axios = require('axios');
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: "https://twitter-frontend-ss7ffpmui-harsha-9977s-projects.vercel.app",
+  credentials: true
+}));
+
 app.use(express.json());
 
 const twitterBearerToken = process.env.TWITTER_BEARER_TOKEN;
